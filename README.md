@@ -8,7 +8,7 @@ Homework 1 for Spring 2017 PIC10C
 
    The program runs the game "Siete y Medio" and records the rounds played in "gamelog.txt".  
 
-The goal of the game is to get cards whose total value comes the closest to 71/2 without going over it. Getting a card total over 7 1/2 is called "busting". 
+The goal of the game is to get cards whose total value comes the closest to 7 1/2 without going over it. Getting a card total over 7 1/2 is called "busting". 
 
 When a player makes a bet against the dealer. There are 4 possible outcomes:
 
