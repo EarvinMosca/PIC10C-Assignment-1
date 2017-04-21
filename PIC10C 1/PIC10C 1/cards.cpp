@@ -216,11 +216,119 @@ bool Card::operator < (Card card2) const {
 /* *************************************************
 Hand class
 ************************************************* */
-// Implemente the member functions of the Hand class here.
+Hand::Hand() {
+	vector<Card> cards(0);
+}
+
+//Keeps track of the total value of the hand(keeping track of the fact that King,Knight, and Jack are half points each).
+double Hand::sum() const{
+	double sum = 0;
+	double value = 0;
+	for (int i = 0; i < cards.size(); i++){
+		cards[i].get_rank();
+		if (cards[i].get_rank() == 10 || cards[i].get_rank() == 11 || cards[i].get_rank() == 12)
+			value = 0.5;
+		else
+			value = (double)cards[i].get_rank();
+
+		sum += value;
+	}
+
+	return sum;
+}
+
+void Hand::print_hand() const{
+	string longestCardName = " ";
+	int longWordLength = longestCardName.length();
+
+	for (int i = 0; i < cards.size(); i++){
+		if (cards[i].get_spanish_card_name().length()>longWordLength)
+			longestCardName = cards[i].get_spanish_card_name();
+		longWordLength = longestCardName.length();
+	}
+
+	for (int i = 0; i<cards.size(); i++)
+
+		cout << setw(7) << " " << setw(longWordLength) << right << cards[i].get_spanish_card_name()
+		<< setw(7) << "(" << cards[i].get_english_card_name() << ")." << endl;
+
+
+
+	return;
+}
+
+void Hand::fileprint_hand(string name) const{
+	ofstream fout;
+	fout.open(name.c_str(), ios::app);
+
+
+	string longestCardName = " ";
+	int longWordLength = longestCardName.length();
+
+	for (int i = 0; i < cards.size(); i++){
+		if (cards[i].get_spanish_card_name().length()>longWordLength)
+			longestCardName = cards[i].get_spanish_card_name();
+		longWordLength = longestCardName.length();
+	}
+
+	for (int i = 0; i<cards.size(); i++)
+
+		fout << setw(7) << " " << setw(longWordLength) << right << cards[i].get_spanish_card_name()
+		<< setw(7) << "(" << cards[i].get_english_card_name() << ")." << endl;
+
+	fout.close();
+
+	return;
+}
+
+//Gets a card from the vector cards.
+Card Hand::get_card(int position) const {
+	return cards[position];
+}
+
+//Gets the size of the hand.
+int Hand::get_handSize() const {
+	return cards.size();
+}
+
+//Sorts the cards in the hand by rank(suit is irrelevant).
+void Hand::sort_hand() {
+	sort(cards.begin(), cards.end());
+}
+
+//Adds a new(random) card to the hand.
+void Hand::draw_card() {
+	Card newCard;
+	cards.push_back(newCard);
+	return;
+}
+
+//Resets the hand to 0. Use at end of rounds.
+void Hand::reset_hand() {
+	cards.resize(0);
+	return;
+}
 
 
 
 /* *************************************************
 Player class
 ************************************************* */
-// Implemente the member functions of the Player class here.
+
+Player::Player(int m) {
+	money = m;
+}
+
+int Player::get_money() const{
+	return money;
+}
+
+void Player::lose_bet(int b) {
+	money = money - b;
+	return;
+}
+
+void Player::win_bet(int b) {
+	money = money + b;
+	return;
+}
