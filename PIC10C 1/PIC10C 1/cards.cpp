@@ -114,20 +114,79 @@ string Card::get_spanish_rank() const {
 	return rankName;
 }
 
+string Card::get_spanish_card_name() const{
+	string spanishCardName = get_spanish_rank() + " de " + get_spanish_suit();
+	return spanishCardName;
 
-
+}
 // Accessor: returns a string with the suit of the card in English 
-// This is just a stub! Modify it to your liking.
+
 string Card::get_english_suit() const {
-	return "";
+
+	string englishSuitName;
+	switch (suit) {
+	case OROS:
+		englishSuitName = "coins";
+		break;
+	case COPAS:
+		englishSuitName = "cups";
+		break;
+	case ESPADAS:
+		englishSuitName = "spades";
+		break;
+	case BASTOS:
+		englishSuitName = "clubs";
+		break;
+	default: break;
+	}
+	return englishSuitName;
 }
 
 // Accessor: returns a string with the rank of the card in English 
 // This is just a stub! Modify it to your liking.
 string Card::get_english_rank() const {
-	return "";
+	string englishRankName;
+	switch (rank) {
+	case AS:
+		englishRankName = "Ace";
+		break;
+	case DOS:
+		englishRankName = "Two";
+		break;
+	case TRES:
+		englishRankName = "Three";
+		break;
+	case CUATRO:
+		englishRankName = "Four";
+		break;
+	case CINCO:
+		englishRankName = "Five";
+		break;
+	case SEIS:
+		englishRankName = "Six";
+		break;
+	case SIETE:
+		englishRankName = "Seven";
+		break;
+	case SOTA:
+		englishRankName = "Jack";
+		break;
+	case CABALLO:
+		englishRankName = "Knight";
+		break;
+	case REY:
+		englishRankName = "King";
+		break;
+	default: break;
+	}
+	return englishRankName;
 }
 
+string Card::get_english_card_name() const{
+	string englishCardName = get_english_rank() + " of " + get_english_suit();
+	return englishCardName;
+
+}
 
 
 // Assigns a numerical value to card based on rank.
@@ -135,6 +194,9 @@ string Card::get_english_rank() const {
 int Card::get_rank() const {
 	return static_cast<int>(rank)+1;
 }
+
+
+
 
 // Comparison operator for cards
 // Returns TRUE if card1 < card2
