@@ -1,12 +1,12 @@
 # PIC10C-Assignment-1
+## Earvin Mosca  
+## April 21, 2017
+
 Homework 1 for Spring 2017 PIC10C
 
-   Earvin Mosca  
-   April 21, 2017  
+  
 
-   The program runs the game "Siete y Medio"  
-   and records the rounds played in   
-   "gamelog.txt".  
+   The program runs the game "Siete y Medio" and records the rounds played in "gamelog.txt".  
 
 The goal of the game is to get cards whose total value comes the closest to 71/2 without going over it. Getting a card total over 7 1/2 is called "busting". 
 
