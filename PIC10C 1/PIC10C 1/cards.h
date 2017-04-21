@@ -106,7 +106,7 @@ public:
 
 private:
 	int money;
-	// You decide what extra fields (if any) you'll need...
+	
 };
 
 #endif
