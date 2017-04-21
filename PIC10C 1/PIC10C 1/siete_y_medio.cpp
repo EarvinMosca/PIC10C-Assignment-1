@@ -122,6 +122,7 @@ int main(){
 	int bet;
 	int gameRound = 1;
 	
+	srand( static_cast<int>( time(0) ));
 
 	while (player1.get_money() > 0 && dealer.get_money() > 0){
 		cout << "You have $" << player1.get_money() << "." << " Enter bet: ";
