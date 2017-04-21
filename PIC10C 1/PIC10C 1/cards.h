@@ -68,12 +68,24 @@ private:
 class Hand {
 public:
 	// A vector of Cards
+	//Constructors
 	Hand();
 
-	// You decide what functions you'll need...
+	//Accessors
+	double sum() const;
+	void print_hand() const;
+	Card get_card(int position) const;
+	int get_handSize() const;
+	void fileprint_hand(string name) const;
+
+	//Mutators
+	void draw_card();
+	void reset_hand();
+	void sort_hand();
 
 private:
-	// You decide what fields you'll need...
+
+	vector<Card> cards;
 };
 
 
