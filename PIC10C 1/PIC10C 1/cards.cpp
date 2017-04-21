@@ -195,7 +195,14 @@ int Card::get_rank() const {
 	return static_cast<int>(rank)+1;
 }
 
+//Prints out the card.
+void Card::print_card() const{
+	cout << setw(get_spanish_card_name().length() + 7) << get_spanish_card_name();
 
+	cout << setw(7) << "(" << setw(get_english_card_name().length()) << get_english_card_name() << ")." << endl;
+
+	return;
+}
 
 
 // Comparison operator for cards
