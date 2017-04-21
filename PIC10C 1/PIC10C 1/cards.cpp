@@ -315,4 +315,22 @@ void Hand::reset_hand() {
 /* *************************************************
 Player class
 ************************************************* */
-// Implemente the member functions of the Player class here.
+
+Player::Player(int m) {
+	money = m;
+}
+
+int Player::get_money() const{
+	return money;
+}
+
+void Player::lose_bet(int b) {
+	money = money - b;
+	return;
+}
+
+void Player::win_bet(int b) {
+	money = money + b;
+	return;
+}
+

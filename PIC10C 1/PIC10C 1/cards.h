@@ -95,7 +95,14 @@ public:
 	//    Assigns initial amount of money
 	Player(int m);
 
-	// You decide what functions you'll need...
+	//Accessors
+	int get_money() const;
+
+	//Mutators
+	void lose_bet(int b);
+	void win_bet(int b);
+
+
 
 private:
 	int money;
