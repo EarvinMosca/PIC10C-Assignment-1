@@ -18,6 +18,10 @@ Hand class,and Player class.
 Card class
 ************************************************* */
 
+/* *************************************************
+Card class
+************************************************* */
+
 /*
 Default constructor for the Card class.
 It could give repeated cards. This is OK.
